@@ -1,10 +1,51 @@
 [versions]
+# VERSION CONFIGURATION
+minsdk = "21"
+compilesdk = "32"
+targetSdk = "32"
+versionCode = "1"
+versionName = "1.0.0"
+
+# Gradle Tools
 android-gradle = "7.2.2"
 kotlin = "1.6.10"
-room = "2.4.2"
+
+#View
+core = "1.8.0"
 compose = "1.2.1"
+activity = "1.5.1"
+constraint = "2.1.4"
+material3 = "1.0.0-beta01"
+
+#Coroutines
+coroutine = "1.6.0"
+
+#DI
+hilt = "2.43.2"
 
 [libraries]
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "android-gradle"}
+kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin"}
+
+# Android CORE
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core"}
+
+# Jetpack Compose
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "compose"}
+androidx-compose-ui-core = { module = "androidx.compose.ui:ui", version.ref = "compose"}
+androidx-compose-tooling-core = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose"}
+androidx-compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose"}
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3"}
+
+# Hilt
+hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt"}
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt"}
+hilt-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt"}
+
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine"}
+
+[bundles]
+compose = ["androidx-compose-ui-core", "androidx-compose-tooling-core", "androidx-compose-tooling-preview", "androidx-compose-material3"]
 
 
 [plugins]
@@ -12,3 +53,4 @@ android-application = { id = "com.android.application", version.ref = "android-g
 android-library = { id = "com.android.library", version.ref = "android-gradle"}
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin"}
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin"}
+hilt-plugin = { id = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt"}

@@ -2,17 +2,18 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
-    compileSdk = 32
+    compileSdk = libs.versions.compilesdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.capri.composeapplication"
-        minSdk = 21
-        targetSdk = 32
-        versionCode= 1
-        versionName = "1.0"
+        minSdk = libs.versions.minsdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -43,16 +44,17 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.compose.ui:ui:1.1.0-beta01")
-    implementation("androidx.compose.material3:material3:1.0.0-alpha01")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.1.0-beta01")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation("androidx.activity:activity-compose:1.3.1")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.bundles.compose)
+    implementation(libs.coroutines)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
+
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.0-beta01")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.1.0-beta01")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.1.0-beta01")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.3.0-beta02")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.3.0-beta02")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.0-beta02")
 }

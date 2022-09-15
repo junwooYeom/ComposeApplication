@@ -1,3 +1,10 @@
+buildscript {
+    dependencies {
+        classpath(libs.android.gradle)
+        classpath(libs.kotlin.gradle)
+        classpath(libs.hilt.gradle)
+    }
+}
 @kotlin.Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.kotlin.android) apply false
