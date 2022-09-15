@@ -1,0 +1,14 @@
+[versions]
+android-gradle = "7.2.2"
+kotlin = "1.6.10"
+room = "2.4.2"
+compose = "1.2.1"
+
+[libraries]
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-gradle"}
+android-library = { id = "com.android.library", version.ref = "android-gradle"}
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin"}
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin"}
