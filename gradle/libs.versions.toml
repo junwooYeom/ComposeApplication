@@ -1,21 +1,24 @@
 [versions]
 # VERSION CONFIGURATION
 minsdk = "21"
-compilesdk = "32"
-targetSdk = "32"
+compilesdk = "33"
+targetSdk = "33"
 versionCode = "1"
 versionName = "1.0.0"
 
 # Gradle Tools
 android-gradle = "7.2.2"
-kotlin = "1.6.10"
+kotlin = "1.7.10"
 
 #View
 core = "1.8.0"
 compose = "1.2.1"
+compose-compiler = "1.3.0"
 activity = "1.5.1"
 constraint = "2.1.4"
 material3 = "1.0.0-beta01"
+
+lifecycle = "2.5.1"
 
 #Coroutines
 coroutine = "1.6.0"
@@ -27,8 +30,9 @@ hilt = "2.43.2"
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "android-gradle"}
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin"}
 
-# Android CORE
+# Android Core
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core"}
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity"}
 
 # Jetpack Compose
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "compose"}
@@ -37,15 +41,18 @@ androidx-compose-tooling-core = { module = "androidx.compose.ui:ui-tooling", ver
 androidx-compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose"}
 androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3"}
 
+lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle"}
+
 # Hilt
 hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt"}
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt"}
 hilt-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt"}
 
+# Coroutine
 coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine"}
 
 [bundles]
-compose = ["androidx-compose-ui-core", "androidx-compose-tooling-core", "androidx-compose-tooling-preview", "androidx-compose-material3"]
+compose = ["androidx-activity-compose", "androidx-compose-ui-core", "androidx-compose-tooling-core", "androidx-compose-tooling-preview", "androidx-compose-material3"]
 
 
 [plugins]
