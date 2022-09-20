@@ -47,6 +47,8 @@ dependencies {
 
     implementation(project(":data"))
     implementation(project(":network"))
+    implementation(project(":domain"))
+    implementation(project(":ui-components"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.ktx)
