@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ComposeApplication"
 include(":app")
+include(":data")
+include(":network")
+include(":domain")
+include(":ui-components")

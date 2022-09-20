@@ -7,7 +7,7 @@ versionCode = "1"
 versionName = "1.0.0"
 
 # Gradle Tools
-android-gradle = "7.2.2"
+android-gradle = "7.3.0"
 kotlin = "1.7.10"
 
 #View
@@ -23,8 +23,14 @@ lifecycle = "2.5.1"
 #Coroutines
 coroutine = "1.6.0"
 
+#Retrofit
+retrofit = "2.9.0"
+
 #DI
 hilt = "2.43.2"
+
+#test
+
 
 [libraries]
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "android-gradle"}
@@ -40,8 +46,11 @@ androidx-compose-ui-core = { module = "androidx.compose.ui:ui", version.ref = "c
 androidx-compose-tooling-core = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose"}
 androidx-compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose"}
 androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3"}
-
 lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle"}
+
+# retrofit
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 
 # Hilt
 hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt"}
@@ -53,7 +62,7 @@ coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", vers
 
 [bundles]
 compose = ["androidx-activity-compose", "androidx-compose-ui-core", "androidx-compose-tooling-core", "androidx-compose-tooling-preview", "androidx-compose-material3"]
-
+retrofit = ["retrofit", "retrofit-converter-gson"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle"}
