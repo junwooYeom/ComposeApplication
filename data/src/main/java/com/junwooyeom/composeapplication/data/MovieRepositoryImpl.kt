@@ -1,7 +1,8 @@
+package com.junwooyeom.composeapplication.data
+
 import com.junwooyeom.composeapplication.domain.Movie
 import com.junwooyeom.composeapplication.domain.MovieRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 

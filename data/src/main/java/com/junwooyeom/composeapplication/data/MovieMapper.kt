@@ -1,3 +1,5 @@
+package com.junwooyeom.composeapplication.data
+
 import com.junwooyeom.composeapplication.database.MovieEntity
 import com.junwooyeom.composeapplication.domain.Movie
 import com.junwooyeom.network.MovieDto

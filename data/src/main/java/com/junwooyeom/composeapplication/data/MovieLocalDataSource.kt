@@ -1,3 +1,5 @@
+package com.junwooyeom.composeapplication.data
+
 import com.junwooyeom.composeapplication.database.MovieDao
 import com.junwooyeom.composeapplication.database.MovieEntity
 import kotlinx.coroutines.flow.Flow

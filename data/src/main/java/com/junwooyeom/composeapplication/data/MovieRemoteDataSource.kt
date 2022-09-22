@@ -1,3 +1,5 @@
+package com.junwooyeom.composeapplication.data
+
 import com.junwooyeom.network.MovieDto
 import com.junwooyeom.network.MovieApi
 import javax.inject.Inject
