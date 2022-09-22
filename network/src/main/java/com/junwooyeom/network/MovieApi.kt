@@ -3,7 +3,7 @@ package com.junwooyeom.network
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface MovieInfraService {
+interface MovieApi {
 
     @GET("/films")
     suspend fun getFilms(): List<MovieDto>

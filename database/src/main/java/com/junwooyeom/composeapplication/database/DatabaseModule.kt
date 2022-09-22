@@ -1,4 +1,4 @@
-package com.junwooyeom.composeapplication.data
+package com.junwooyeom.composeapplication.database
 
 import android.content.Context
 import androidx.room.Room

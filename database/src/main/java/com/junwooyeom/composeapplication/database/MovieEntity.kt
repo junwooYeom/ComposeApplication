@@ -1,4 +1,4 @@
-package com.junwooyeom.composeapplication.data
+package com.junwooyeom.composeapplication.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

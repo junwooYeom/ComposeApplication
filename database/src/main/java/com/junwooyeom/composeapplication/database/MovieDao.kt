@@ -1,4 +1,4 @@
-package com.junwooyeom.composeapplication.data
+package com.junwooyeom.composeapplication.database
 
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -7,7 +7,10 @@ import kotlinx.coroutines.flow.Flow
 
 interface MovieDao {
     @Query("SELECT * FROM MovieEntity")
-    fun getAllFilms(): Flow<MovieEntity>
+    fun getAllFilmsByFlow(): Flow<List<MovieEntity>>
+
+    @Query("SELECT * FROM MovieEntity")
+    suspend fun getAllFilms(): List<MovieEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFilm(entity: MovieEntity)
