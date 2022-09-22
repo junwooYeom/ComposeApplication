@@ -21,5 +21,6 @@ data class Movie(
     val runningTime: String,
     val score: String,
     val url: String,
-
-): Serializable
+): Serializable {
+    val isFavorite: Boolean = false
+}

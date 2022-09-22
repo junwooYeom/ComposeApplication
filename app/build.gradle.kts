@@ -58,8 +58,9 @@ dependencies {
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
     implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.navigation.compose)
 
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.3.0-beta02")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.3.0-beta02")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.0-beta02")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.3.0-beta03")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.3.0-beta03")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.0-beta03")
 }

@@ -12,9 +12,9 @@ interface MovieRepository {
 
     val favoriteListFlow: Flow<List<Movie>>
 
-    suspend fun getMovie(): List<Movie>
+    fun getMovie(): Flow<NetworkResult<List<Movie>>>
 
-    suspend fun getMovieById(id: String): Movie
+    fun getMovieById(id: String): Flow<NetworkResult<Movie>>
 
     suspend fun insertMovie(movie: Movie)
 

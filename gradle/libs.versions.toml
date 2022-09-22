@@ -17,6 +17,8 @@ coroutine = "1.6.0"
 retrofit = "2.9.0"
 hilt = "2.43.2"
 room = "2.4.3"
+navigation = "2.5.1"
+coil = "2.2.1"
 
 [libraries]
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "android-gradle"}
@@ -34,6 +36,9 @@ androidx-compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-pr
 androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3"}
 lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle"}
 
+#Navigation
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation"}
+
 # retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
@@ -50,6 +55,7 @@ coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", vers
 room = { module = "androidx.room:room-runtime", version.ref = "room"}
 room-compiler = { module = "android.room:room-compiler", version.ref = "room"}
 
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil"}
 
 [bundles]
 compose = ["androidx-activity-compose", "androidx-compose-ui-core", "androidx-compose-tooling-core", "androidx-compose-tooling-preview", "androidx-compose-material3"]
