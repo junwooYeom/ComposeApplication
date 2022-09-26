@@ -4,6 +4,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
@@ -19,6 +21,9 @@ class NetworkModule {
     @Singleton
     fun provideRetrofit(): Retrofit =
         Retrofit.Builder()
+            .client(OkHttpClient.Builder()
+                .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .build())
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(MOVIE_URL)
             .build()

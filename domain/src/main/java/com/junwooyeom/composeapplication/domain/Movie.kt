@@ -1,6 +1,7 @@
 package com.junwooyeom.composeapplication.domain
 
 import androidx.annotation.Keep
+import kotlinx.coroutines.flow.MutableStateFlow
 import java.io.Serializable
 
 /**
@@ -22,5 +23,5 @@ data class Movie(
     val score: String,
     val url: String,
 ): Serializable {
-    val isFavorite: Boolean = false
+    val isFavorite: MutableStateFlow<Boolean> = MutableStateFlow(false)
 }

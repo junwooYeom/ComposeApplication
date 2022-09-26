@@ -19,7 +19,7 @@ class MovieRepositoryImpl @Inject constructor(
     override val favoriteListFlow: Flow<List<Movie>>
         get() = localDataSource.getMoviesByFlow().map { it.map { data -> data.toMovie() } }
 
-    override fun getMovie(): Flow<NetworkResult<List<Movie>>> = remoteDataSource.getMovie().transform { value ->
+    override fun getMovie(): Flow<NetworkResult<List<Movie>>> = remoteDataSource.getMovie().map { value ->
         value.let {
             when (it) {
                 is NetworkResult.Success -> NetworkResult.Success(it.value.map { item -> item.toMovie() })
@@ -29,7 +29,7 @@ class MovieRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getMovieById(id: String): Flow<NetworkResult<Movie>> = remoteDataSource.getMovieById(id).transform { value ->
+    override fun getMovieById(id: String): Flow<NetworkResult<Movie>> = remoteDataSource.getMovieById(id).map { value ->
         value.let {
             when (it) {
                 is NetworkResult.Success -> NetworkResult.Success(it.value.toMovie())

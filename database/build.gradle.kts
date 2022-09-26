@@ -29,4 +29,5 @@ dependencies {
     kapt(libs.hilt.compiler)
 
     implementation(libs.room)
+    kapt(libs.room.compiler)
 }

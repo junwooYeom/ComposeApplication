@@ -14,6 +14,7 @@ constraint = "2.1.4"
 material3 = "1.0.0-beta01"
 lifecycle = "2.5.1"
 coroutine = "1.6.0"
+logging-interceptor = "4.8.0"
 retrofit = "2.9.0"
 hilt = "2.43.2"
 room = "2.4.3"
@@ -42,6 +43,7 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 # retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "logging-interceptor"}
 
 # Hilt
 hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt"}
@@ -52,14 +54,14 @@ hilt-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version
 coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine"}
 
 #Room
-room = { module = "androidx.room:room-runtime", version.ref = "room"}
-room-compiler = { module = "android.room:room-compiler", version.ref = "room"}
+room = { module = "androidx.room:room-ktx", version.ref = "room"}
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room"}
 
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil"}
 
 [bundles]
 compose = ["androidx-activity-compose", "androidx-compose-ui-core", "androidx-compose-tooling-core", "androidx-compose-tooling-preview", "androidx-compose-material3"]
-retrofit = ["retrofit", "retrofit-converter-gson"]
+retrofit = ["retrofit", "retrofit-converter-gson", "okhttp-logging-interceptor"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle"}

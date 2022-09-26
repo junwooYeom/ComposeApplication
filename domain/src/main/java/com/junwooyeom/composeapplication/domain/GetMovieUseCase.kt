@@ -13,7 +13,5 @@ import javax.inject.Inject
 class GetMovieUseCase @Inject constructor(
     private val movieRepository: MovieRepository
 ){
-    operator fun invoke() = movieRepository.getMovie().zip(movieRepository.favoriteListFlow) { result, favorites ->
-        if (result is NetworkResult.Success) result.value.all { favorites.contains(it) } else result
-    }
+    operator fun invoke() = movieRepository.getMovie()
 }
